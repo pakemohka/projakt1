@@ -1,2 +1,2 @@
 
-print ("hello world, мне нравится Genshin Impact ")
+print ("hello world, мне нравится Genshin Impact")
