@@ -2,17 +2,22 @@ import logging
 import random
 
 class Human:
-    def __init__(self, name="Human", job=None, home=None, car=None):
+    def __init__(self, name="Human", job=None, home=None, car=None, cat=None, ):
         self.name = name
         self.money = 100
         self.gladness = 50
         self.satiety = 50
+        self.satietycat = 50
         self.job = job
         self.car = car
         self.home = home
+        self.cat = cat
 
     def get_home(self):
         self.home = House()
+
+    def get_cat(self):
+        self.home = Cat()
 
     def get_car(self):
         self.car = Auto(brands_of_car)
@@ -34,6 +39,16 @@ class Human:
                 self.satiety = 100
                 return
             self.satiety += 5
+            self.home.food -= 5
+
+    def eatcat(self):
+        if self.home.food <=0:
+            self.shopping("food")
+        else:
+            if self.satietycat >= 100:
+                self.satietycat = 100
+                return
+            self.satietycat += 5
             self.home.food -= 5
 
     def work(self):
@@ -130,6 +145,9 @@ class Human:
         if self.satiety < 20:
             print("I'll go eat")
             self.eat()
+        if self.satietycat < 20:
+            print("time to feed the cat")
+            self.eatcat()
         elif self.gladness < 20:
             if self.home.mess > 15:
                 print("I want to chill, but there is so much mess…")
