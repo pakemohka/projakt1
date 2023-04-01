@@ -1,13 +1,13 @@
 import random
-class Student:
-     def __init__(self, name):
-        self.name = name
+class Rabbit:
+     def __init__(self, rabbit):
+        self.rabbit = rabbit
         self.gladness = 50
         self.progress = 0
         self.alive = True
 
-     def to_study(self):
-        print("Time to study")
+     def to_walk(self):
+        print("time to walk")
         self.progress += 0.12
         self.gladness -= 3
 
@@ -37,11 +37,11 @@ class Student:
         print(f"Progress = {round(self.progress, 2)}")
 
      def live(self, day):
-         day = "Day " + str(day) + " of " + self.name + " life"
+         day = "Day " + str(day) + " of " + self.rabbit + " life"
          print(f"{day:=^50}")
          live_cube = random.randint(1, 3)
          if live_cube == 1:
-            self.to_study()
+            self.to_walk()
          elif live_cube == 2:
             self.to_sleep()
          elif live_cube == 3:
@@ -49,12 +49,12 @@ class Student:
          self.end_of_day()
          self.is_alive()
 
-nick = Student(name="Nick")
-kate = Student(name="Dog")
+nick = Rabbit(rabbit="Nick")
+nick = Rabbit(rabbit="rabbit")
 for day in range(365):
     if nick.alive == False:
         break
     nick.live(day)
-    if kate.alive == False:
+    if nick.alive == False:
         break
-    kate.live(day)
+    nick.live(day)
