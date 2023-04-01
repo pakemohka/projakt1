@@ -17,7 +17,7 @@ class Human:
         self.home = House()
 
     def get_cat(self):
-        self.home = Cat()
+        self.cat = Cat()
 
     def get_car(self):
         self.car = Auto(brands_of_car)
