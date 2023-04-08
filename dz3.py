@@ -76,7 +76,7 @@ class Human:
             else:
                 self.to_gladness()
                 return
-        if manage == "food":
+        if manage == "food":zz
             print("I gladness pet")
             self.money -= 50
             self.zoo.gladness += 80
