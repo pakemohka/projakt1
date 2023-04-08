@@ -1,6 +1,6 @@
 import logging
 from lol import *
-class My_Test(unittest.TestCase):
+class My_Test(unittes.TestCase):
 def test_args(self):
  self.assertEqual(adder(2, 2), 4)
  logging.basicConfig(level=logging.DEBUG,
