@@ -1,5 +1,9 @@
 import logging
 import random
+import logging
+
+# add filemode="w" to overwrite
+logging.basicConfig(filename="sample.log", level=logging.INFO)
 
 class Human:
     def __init__(self, name="Human", job=None, home=None, car=None, zoo=None, ):
@@ -76,7 +80,7 @@ class Human:
             else:
                 self.to_gladness()
                 return
-        if manage == "food":zz
+        if manage == "food":zoo
             print("I gladness pet")
             self.money -= 50
             self.zoo.gladness += 80
